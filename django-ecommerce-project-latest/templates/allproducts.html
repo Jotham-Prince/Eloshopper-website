@@ -1,0 +1,103 @@
+{% extends 'base.html' %}
+
+{% block title %} Eloshopper - All products {% endblock %}
+
+{% block content %}
+
+{% comment %} show all products(aka categories navigation link) {% endcomment %}
+<div class="container">
+<br>
+ <h3>All Products</h3><hr>
+    {% for cat in allcategories %}
+<h4>{{cat.title}}</h4><hr>
+<div class="container-fluid bg-trasparent my-4 p-3" style="position: relative">
+  <div class="row row-cols-1 row-cols-xs-2 row-cols-sm-2 row-cols-lg-4 g-3">
+
+
+    {% for p in cat.product_set.all %}
+    <div class="col hp">
+      <div class="card h-100 shadow-sm">
+        <a href="{% url 'ecomapp:productdetail' p.slug %}">
+          <img src="{{p.image.url}}" class="card-img-top" alt="product.title" />
+        </a>
+
+        <div class="label-top shadow-sm">
+          <a class="text-white" href="{% url 'ecomapp:productdetail' p.slug %}"><strike>{{p.marked_price}}</strike></a>
+        </div>
+        <div class="card-body">
+          <div class="clearfix mb-3">
+            <span class="float-start badge rounded-pill bg-success">UGX {{p.selling_price}}</span>
+
+                {% if p.in_stock == "Fully stocked" %}
+            <span class="float-end"><a href="#" class="small text-muted text-uppercase aff-link">In stock</a></span>
+                 {% else %}
+            <span class="float-end"><a href="#" class="small text-muted text-uppercase aff-link">Out of stock</a></span>
+                {% endif %}
+
+
+          </div>
+          <h5 class="card-title">
+            <a target="_blank" href="{% url 'ecomapp:productdetail' p.slug %}">{{p.title}}</a>
+          </h5>
+
+          <div class="d-grid gap-2 my-4">
+
+            <a href="{% url 'ecomapp:addtocart' p.id %}" class="btn btn-warning bold-btn">add to cart</a>
+
+          </div>
+          <div class="clearfix mb-1">
+
+            <span class="float-start"><a href="{% url 'ecomapp:productdetail' p.slug %}"><i class="fas fa-question-circle"></i></a></span>
+
+            <span class="float-end">
+              <i class="far fa-heart" style="cursor: pointer"></i>
+
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {% endfor %}
+  
+
+  </div>
+</div>
+{% endfor %}
+</div>
+
+<br><br>
+    <!-- the bottom and next page paginations -->
+    <nav aria-label="..."  style="margin-left: 100px;">
+        <ul class="pagination">
+            {% if allcategories.has_previous %}
+            <li class="page-item">
+                <a class="page-link" href="?page={{ allcategories.previous_page_number }}">Previous</a>
+              </li>
+            {% else %}
+            <li class="page-item disabled">
+                <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+            </li>
+            {% endif %}
+
+            {% for i in allcategories.paginator.page_range %}
+            {% if i == allcategories.number %}
+            <li class="page-item active"><a class="page-link">{{i}}</a></li>
+            {% else %}
+            <li class="page-item"><a class="page-link" href="?page={{i}}">{{i}}</a></li>
+            {% endif %}
+            {% endfor %}
+
+            {% if allcategories.has_next %}
+            <li class="page-item">
+                <a class="page-link" href="?page={{ allcategories.next_page_number }}">Next</a>
+            </li>
+            {% else %}
+            <li class="page-item disabled">
+                <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Next</a>
+            </li>
+            {% endif %}
+        </ul>
+      </nav>
+
+{% endblock %}

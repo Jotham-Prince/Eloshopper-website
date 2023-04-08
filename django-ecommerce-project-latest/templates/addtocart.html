@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% comment %} the add to cart page {% endcomment %}
+
+{% block title %}Add to cart{% endblock %}
+
+{% block content %}
+
+<br><br><br>
+{% comment %} Site to be shown when a product is successfully added to cart {% endcomment %}
+<div class="container">
+	<hr>
+
+    <h3>Product added to cart successfully.</h3>
+
+    <a href="{% url 'ecomapp:home' %}"><button class="btn btn-success">Back to Home</button></a>
+
+    <hr>
+</div>
+
+{% endblock %}

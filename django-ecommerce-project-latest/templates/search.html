@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+
+{% block title %}Search {% endblock %}
+
+{% block content %}
+
+<!-- the aside navigation tab -->
+<style type="text/css">
+    .carousel {
+    border-radius: 20px 20px 20px 20px;
+    overflow: hidden;}
+
+</style>
+
+
+    
+<div class="container-fluid bg-trasparent my-4 p-3" style="position: relative">
+    <h3>Search Results for <span class="text-info">"{{request.GET.keyword}}"</span></h3>
+            <hr>
+    <div class="row row-cols-1 row-cols-xs-2 row-cols-sm-2 row-cols-lg-4 g-3">
+  
+  
+        {% for result in results %}
+      <div class="col hp">
+        
+        <div class="card h-100 shadow-sm">
+          <a href="{% url 'ecomapp:productdetail' result.slug %}">
+            <img src="{{result.image.url}}" class="card-img-top" alt="product.title" />
+          </a>
+  
+          <div class="label-top shadow-sm">
+            <a class="text-white" href="{% url 'ecomapp:productdetail' result.slug %}"><strike>{{result.marked_price}}</strike></a>
+          </div>
+          <div class="card-body">
+            <div class="clearfix mb-3">
+              <span class="float-start badge rounded-pill bg-success">UGX {{result.selling_price}}</span>
+  
+                  {% if result.in_stock == "Fully stocked" %}
+              <span class="float-end"><a href="#" class="small text-muted text-uppercase aff-link">In stock</a></span>
+                   {% else %}
+              <span class="float-end"><a href="#" class="small text-muted text-uppercase aff-link">Out of stock</a></span>
+                  {% endif %}
+  
+  
+            </div>
+            <h5 class="card-title">
+              <a target="_blank" href="{% url 'ecomapp:productdetail' result.slug %}">{{result.title}}</a>
+            </h5>
+  
+            <div class="d-grid gap-2 my-4">
+  
+              <a href="{% url 'ecomapp:addtocart' result.id %}" class="btn btn-warning bold-btn">add to cart</a>
+  
+            </div>
+            <div class="clearfix mb-1">
+  
+              <span class="float-start"><a href="{% url 'ecomapp:productdetail' result.slug %}"><i class="fas fa-question-circle"></i></a></span>
+  
+              <span class="float-end">
+                <i class="far fa-heart" style="cursor: pointer"></i>
+  
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      {% endfor %}
+    
+  
+    </div>
+  </div>
+  <br><br>
+
+{% endblock %}

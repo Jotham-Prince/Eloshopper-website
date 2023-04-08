@@ -1,0 +1,112 @@
+{% extends 'base.html' %}
+
+{% block title %}Eloshopper - Register Here{% endblock %}
+
+{% block content %}
+
+
+<br><br><br>
+
+<div class="login-page">
+<div class="form">
+ 
+
+            <h3>REGISTER HERE</h3><hr>
+            <form action="" method="POST" class="login-form">
+                {% csrf_token %}
+                {{form.as_p}}
+                <button>SIGN UP</button>
+            </form>
+            <p class="message"> Already have an account? <a href="{% url 'ecomapp:customerlogin' %}">Login here</a></p>
+
+
+</div>
+</div>
+
+<style>
+    
+
+
+    .login-page {
+        height: 100vh;
+        width: 100%;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .form {
+      position: absolute;
+      filter:drop-shadow(0 0 2px #000000);
+      border-radius: 5px;
+      background-color: #a54e4e;
+      padding:40px;
+      width:30%;
+    }
+    
+
+    
+    .form input {
+        outline: 0;
+        background: #f2f2f2;
+        border-radius: 4px;
+        width: 100%;
+        border: 0;
+        margin: 15px 0;
+        padding: 15px;
+        font-size: 14px;
+    }
+    
+    .form input:focus {
+        box-shadow: 0 0 5px 0 rgb(39, 157, 52);
+    }
+    
+    span {
+        color: red;
+        margin: 10px 0;
+        font-size: 14px;
+    }
+    
+    .form button {
+        outline: 0;
+        background: orange;
+        width: 100%;
+        border: 0;
+        margin-top: 10px;
+        border-radius: 3px;
+        padding: 15px;
+        color: #FFFFFF;
+        font-size: 15px;
+        -webkit-transition: all 0.3 ease;
+        transition: all 0.4s ease-in-out;
+        cursor: pointer;
+    }
+    
+    .form button:hover,
+    .form button:active,
+    .form button:focus {
+        background: black;
+        color: #fff;
+    
+    }
+    
+    .message{
+        margin: 15px 0;
+        text-align: center;
+        color: yellow;
+    
+    }
+    .form .message a {
+        font-size: 14px;
+        color: #eccb10;
+        text-decoration: none;
+    }
+
+    @media (max-width: 750px) {
+        .form {
+            width:100%;
+          }
+    }
+    </style>
+
+{% endblock %}

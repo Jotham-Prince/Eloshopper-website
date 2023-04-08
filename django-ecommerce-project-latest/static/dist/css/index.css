@@ -1,0 +1,16 @@
+/*.footer-nav {
+    background-color: goldenrod;
+}*/
+
+.row#aboutuspage{
+	align-items: center;
+	padding-left: 30px;
+	margin-left: 50px;
+}
+
+
+
+/* on phone display */
+@media (min-width: 768px) {
+
+  }

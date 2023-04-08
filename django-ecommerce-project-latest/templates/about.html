@@ -1,0 +1,448 @@
+
+{% extends 'base.html' %}
+{% load static %}
+{% comment %} title to the page {% endcomment %}
+{% block title %}About Eloshopper{% endblock %}
+
+{% block content %}
+<br><br><br>
+
+<!-- the carousel --><!-- the carousel -->
+<div class="container" >
+    <hr>
+
+
+
+{% comment %} the other cards of the next navigation {% endcomment %}
+<div class="row mb-2" id="aboutuspage">
+    <div class="col-md-6">
+      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <strong class="d-inline-block mb-2 text-primary">Uganda</strong>
+          <h3 class="mb-0">
+            <!-- spinner -->
+        <div class="spinner-grow text-success" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+          Featured post</h3>
+          <div class="mb-1 text-muted">Nov 12</div>
+          <p class="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+          <a href="#" class="stretched-link">Continue reading</a>
+        </div>
+        <div class="col-auto d-none d-lg-block">
+          <img src="{% static 'images/shopping.jpg'%}">
+
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <strong class="d-inline-block mb-2 text-success">Design</strong>
+          <h3 class="mb-0">Post title</h3>
+          <div class="mb-1 text-muted">Nov 11</div>
+          <p class="mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+          <a href="#" class="stretched-link">Continue reading</a>
+        </div>
+        <div class="col-auto d-none d-lg-block">
+          <img src="{% static 'images/main.jpg'%}">
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+	<div class="row g-5">
+		<div class="col-md-8">
+	    	<h3 class="pb-4 mb-4 fst-italic border-bottom">We are the emerging ecommerce in the City.</h3>
+	    	<article class="blog-post">
+        <h2 class="blog-post-title mb-1">Sample blog post</h2>
+        <p class="blog-post-meta">January 1, 2021 by <a href="#">Mark</a></p>
+
+        <p>This blog post shows a few different types of content that’s supported and styled with Bootstrap. Basic typography, lists, tables, images, code, and more are all supported as expected.</p>
+        <hr>
+        <p>This is some additional paragraph placeholder content. It has been written to fill the available space and show how a longer snippet of text affects the surrounding content. We'll repeat it often to keep the demonstration flowing, so be on the lookout for this exact same string of text.</p>
+        <h2>WHY WE ARE IN BUSINESS</h2>
+        <blockquote class="blockquote">
+          <p>Customer Satisfaction is priority as well as Quality!</p>
+        </blockquote>
+
+
+        <div class="container">
+          <div class="row">
+                  <div class="our-team">
+                      <div class="team-pic">
+                          <img src="{% static 'images/mission/mission2.png'%}" width="20%" height="20%">
+                      </div>
+                      <div class="team-profile">
+                          <h3 class="team-title">
+                              <a href="#">Mission</a>
+                              <small>Fast Delivery</small>
+                          </h3>
+                          <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec nisi mi. Curabitur.</p>
+                          {% comment %} <ul class="team-social">
+                              <li><a href="#" class="fab fa-facebook"></a></li>
+                              <li><a href="#" class="fab fa-twitter"></a></li>
+                              <li><a href="#" class="fab fa-google-plus"></a></li>
+                              <li><a href="#" class="fab fa-instagram"></a></li>
+                          </ul> {% endcomment %}
+                          <p>By Eloshopper.</p>
+                        </div>       
+          </div>
+      </div>
+      
+
+
+
+
+
+        <h3>TERMS AND CONDITIONS</h3>
+
+        <!-- TERMS AND CONDITIONS -->
+          {% for term in faqs%}
+            <div class="alert alert-success" role="alert">
+              <h4 class="alert-heading">{{term.term_title}}</h4>
+              <p>{{term.term_description}}</p>
+              <hr>
+              <p class="mb-0">{{term.policy}}</p>
+            </div>
+               {% endfor%}
+
+{% comment %} This is the right sidebar with the links {% endcomment %}
+        <h2>Heading</h2>
+        <p>This is some additional paragraph placeholder content. It has been written to fill the available space and show how a longer snippet of text affects the surrounding content. We'll repeat it often to keep the demonstration flowing, so be on the lookout for this exact same string of text.</p>
+        <h3>Sub-heading</h3>
+        <p>This is some additional paragraph placeholder content. It has been written to fill the available space and show how a longer snippet of text affects the surrounding content. We'll repeat it often to keep the demonstration flowing, so be on the lookout for this exact same string of text.</p>
+        <pre><code>Example code block</code></pre>
+        <p>This is some additional paragraph placeholder content. It's a slightly shorter version of the other highly repetitive body text used throughout.</p>
+      </article>
+	    </div>
+	    <div class="col-md-4">
+      <div class="position-sticky" style="top: 2rem;">
+        <div class="p-4 mb-3 bg-light rounded">
+          <h4 class="fst-italic">About</h4>
+          <p class="mb-0">The best emmerging ecommerce and online shopping center in Uganda and Africa at large with exclusive Customer Care and best shopping experience.</p>
+        </div>
+
+        <div class="p-4">
+          <h4 class="fst-italic">Archives</h4>
+          <ol class="list-unstyled mb-0">
+            <li><a href="#">March 2022</a></li>
+            <li><a href="#">February 2022</a></li>
+            <li><a href="#">January 2022</a></li>
+            <li><a href="#">December 2020</a></li>
+            <li><a href="#">November 2020</a></li>
+            <li><a href="#">October 2020</a></li>
+            <li><a href="#">September 2020</a></li>
+            <li><a href="#">August 2020</a></li>
+            <li><a href="#">July 2020</a></li>
+            <li><a href="#">June 2020</a></li>
+            <li><a href="#">May 2020</a></li>
+            <li><a href="#">April 2020</a></li>
+          </ol>
+        </div>
+
+        <div class="p-4">
+          <h4 class="fst-italic">Elsewhere</h4>
+          <ol class="list-unstyled">
+            <li><a href="#"><img src="{% static 'images/instagram.svg'%}" width=20 height=20> Instagram</a></li>
+            <li><a href="#"><img src="{% static 'images/twitter.svg'%}" width=20 height=20> Twitter</a></li>
+            <li><a href="#"><img src="{% static 'images/facebook.svg'%}" width=20 height=20> Facebook</a></li>
+            <li><a href="#"><img src="{% static 'images/whatsapp.svg'%}" width=20 height=20> Whatsapp Group</a></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+	</div>
+
+</div>
+
+
+{% comment %} The cards for the faqs {% endcomment %}
+<div class="row">
+  <div class="col">
+    <h2>Frequently <b>Asked Questions</b></h2>
+
+    <div class="tabs">
+      <div class="tab">
+        <input type="checkbox" id="chck1">
+        <label class="tab-label" for="chck1">How Do I Make Payment Using This Site?</label>
+        <div class="tab-content">
+          FAQ Description here!
+        </div>
+      </div>
+    </div>
+
+    <div class="tabs">
+      <div class="tab">
+        <input type="checkbox" id="chck2">
+        <label class="tab-label" for="chck2">What happens if I Cancel My Order?</label>
+        <div class="tab-content">
+          FAQ Description here!
+        </div>
+      </div>
+    </div>
+
+    <div class="tabs">
+      <div class="tab">
+        <input type="checkbox" id="chck3">
+        <label class="tab-label" for="chck3">How Do I Reach Out to the Management of the Company?</label>
+        <div class="tab-content">
+          FAQ Description here!
+        </div>
+      </div>
+    </div>
+
+    <div class="tabs">
+      <div class="tab">
+        <input type="checkbox" id="chck4">
+        <label class="tab-label" for="chck4">Where do I Find The Pick Up Points for my Ordered Items?</label>
+        <div class="tab-content">
+          FAQ Description here!
+        </div>
+      </div>
+    </div>
+
+    <div class="tabs">
+      <div class="tab">
+        <input type="checkbox" id="chck5">
+        <label class="tab-label" for="chck5">How Legitmate is this Company?</label>
+        <div class="tab-content">
+          FAQ Description here!
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+
+  </div>
+
+</div>
+
+{% comment %} The styles for the about us page {% endcomment %}
+<style>
+
+h1 {
+  margin: 0;
+  line-height: 2;
+  text-align: center;
+}
+
+h2 {
+  margin: 0 0 0.5em;
+  font-weight: normal;
+}
+#chck1 {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+} 
+
+#chck2 {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+} 
+
+#chck3 {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+} 
+#chck4 {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+} 
+#chck5 {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+} 
+
+.row {
+  display: flex;
+}
+
+.row .col {
+  flex: 1;
+}
+
+.row .col:last-child {
+  margin-left: 1em;
+}
+
+/* Accordion styles */
+.tabs {
+  border-radius: 0px;
+  overflow: hidden;
+  box-shadow: 0 4px 4px -2px rgba(0, 0, 0, 0.5);
+}
+
+.tab {
+  width: 100%;
+  color: white;
+  overflow: hidden;
+}
+
+.tab-label {
+  display: flex;
+  justify-content: space-between;
+  padding: 1em;
+  background: #2c3e50;
+  font-weight: bold;
+  cursor: pointer;
+  /* Icon */
+}
+
+.tab-label:hover {
+  background: #1a252f;
+}
+
+.tab-label::after {
+  content: "❯";
+  width: 1em;
+  height: 1em;
+  text-align: center;
+  transition: all 0.35s;
+}
+
+.tab-content {
+  max-height: 0;
+  padding: 0 1em;
+  color: #2c3e50;
+  background: white;
+  transition: all 0.35s;
+}
+
+.tab-close {
+  display: flex;
+  justify-content: flex-end;
+  padding: 1em;
+  font-size: 0.75em;
+  background: #2c3e50;
+  cursor: pointer;
+}
+
+.tab-close:hover {
+  background: #1a252f;
+}
+
+input:checked + .tab-label {
+  background: #1a252f;
+}
+
+input:checked + .tab-label::after {
+  transform: rotate(90deg);
+}
+
+input:checked ~ .tab-content {
+  max-height: 100vh;
+  padding: 1em;
+}
+
+
+.our-team{
+  position:relative;
+  overflow: hidden;
+  height: 355px;
+}
+.our-team .team-pic > img{
+  width: 92%;
+  height:auto;
+}
+.our-team .team-profile{
+  background:#1abc9c;
+  padding: 0 24px;
+  position: absolute;
+  right: 0;
+  bottom: -46%;
+  width: 90%;
+  min-height:245px;
+  transition: all 0.25s ease 0s;
+}
+.our-team:hover .team-profile{
+  bottom:0px;
+}
+.our-team .team-profile:before{
+  content: "";
+  border-bottom: 30px solid #1abc9c;
+  border-right: 262px solid transparent;
+  position: absolute;
+  top:-30px;
+  left: 0;
+}
+.our-team .team-title{
+  line-height: 22px;
+  font-family: serif,Arial;
+}
+.our-team .team-title:after{
+  content:"";
+  display: block;
+  width: 10%;
+  border-bottom:4px solid #fff;
+  padding-bottom:5px;
+}
+.our-team .team-title a{
+  font-size: 23px;
+  text-transform: uppercase;
+  font-weight:bold;
+  color: #fff;
+  display: block;
+  transition:all 0.2s linear 0s;
+}
+.our-team .team-title a:hover{
+  color:#333;
+  text-decoration: none;
+}
+.our-team .team-title > small{
+  font-size: 16px;
+  font-weight: bold;
+  color:#fff
+}
+.our-team .description{
+  color: #fff;
+  line-height: 25px;
+}
+.our-team .description:after{
+  content:"";
+  display:block;
+  border-bottom:1px solid #fff;
+  margin-top: 10px;
+}
+.our-team .team-social{
+  padding:0;
+}
+.our-team .team-social > li{
+  display: inline-block;
+  margin-right: 12px;
+}
+.our-team .team-social > li > a{
+  color:#fff;
+  font-size:15px;
+}
+.our-team .team-social > li > a:hover{
+  text-decoration: none;
+}
+@media only screen and (max-width: 990px) {
+  .our-team{
+      width: 310px;
+      margin: 0 auto 15px;
+  }
+  .our-team .team-profile:before{
+      border-right: 300px solid transparent;
+  }
+}
+@media only screen and (max-width: 359px) {
+  .our-team{
+      width: auto;
+  }
+}
+</style>
+
+
+{% comment %} <script type="text/javascript" src="{% static 'dist/js/aboutus.js'%}"></script> {% endcomment %}
+{% endblock %}

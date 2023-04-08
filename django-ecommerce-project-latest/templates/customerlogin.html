@@ -1,0 +1,110 @@
+{% extends 'base.html' %}
+
+{% comment %} this is the main customer login page {% endcomment %}
+
+{% block title %}Eloshopper - Login{% endblock %}
+
+{% block content %}
+
+
+<br><br><br>
+<div class="login-page">
+<div class="form" id="loginform" >
+
+            <h3>SIGN IN INTO YOUR ACCOUNT</h3>
+            <hr>
+            <form action="" method="POST" class="login-form">
+                {% csrf_token %}
+                {{form.as_p}}
+                <button>SIGN IN</button><br>
+                {% if error %}
+                <li style="color: red;">{{error}}</li>
+                {% endif %}
+            </form><br>
+            <p class="message">Forgot Password?<a href="{% url 'ecomapp:passworforgot' %}"> Reset now.</a></p>
+            <p class="message"> or dont have account? <a href="{% url 'ecomapp:customerregistration' %}{% if request.GET.next %}?next={{request.GET.next}}{% endif %}">Register here</a></p>
+</div>
+</div>
+</div>
+
+
+
+<style>
+{% comment %} the styling {% endcomment %}
+.login-page {
+    height: 100vh;
+    width: 100%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.form {
+  position: absolute;
+  filter:drop-shadow(0 0 2px #000000);
+  border-radius: 5px;
+  background-color: #a54e4e;
+  padding:40px;
+}
+
+
+
+.form input {
+    outline: 0;
+    background: #f2f2f2;
+    border-radius: 4px;
+    width: 100%;
+    border: 0;
+    margin: 15px 0;
+    padding: 15px;
+    font-size: 14px;
+}
+
+.form input:focus {
+    box-shadow: 0 0 5px 0 rgb(39, 157, 52);
+}
+
+span {
+    color: red;
+    margin: 10px 0;
+    font-size: 14px;
+}
+
+.form button {
+    outline: 0;
+    background: orange;
+    width: 100%;
+    border: 0;
+    margin-top: 10px;
+    border-radius: 3px;
+    padding: 15px;
+    color: #FFFFFF;
+    font-size: 15px;
+    -webkit-transition: all 0.3 ease;
+    transition: all 0.4s ease-in-out;
+    cursor: pointer;
+}
+
+.form button:hover,
+.form button:active,
+.form button:focus {
+    background: black;
+    color: #fff;
+
+}
+
+.message{
+    margin: 15px 0;
+    text-align: center;
+    color: yellow;
+
+}
+.form .message a {
+    font-size: 14px;
+    color: #e8d50b;
+    text-decoration: none;
+}
+</style>
+
+ 
+{% endblock %}
