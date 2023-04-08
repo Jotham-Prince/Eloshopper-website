@@ -1,6 +1,6 @@
 """
      This is the secondary urls file(second urls under the ecomapp app)
-     Coded and maintained by vernonthedev
+     Coded and maintained by Jotham Prince
      Eshopper Ecommerce web application 
      Builted and developed in python and django
 """
