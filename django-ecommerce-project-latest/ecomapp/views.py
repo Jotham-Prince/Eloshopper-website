@@ -1,6 +1,6 @@
 """
     This is the main views file for the Eshopper main content
-    Coded and maintained by vernonthedev
+    Coded and maintained by Jotham Prince
     Developed with django version above >3
 """
 
