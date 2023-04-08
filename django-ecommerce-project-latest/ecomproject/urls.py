@@ -1,7 +1,7 @@
 """
     This is the main urls file of the project
     Contains the main paths to the urls
-    Coded and maintained by vernonthedev
+    Coded and maintained by Jotham Prince
     Eshopper ecommerce web application
 """
 
