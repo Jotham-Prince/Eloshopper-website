@@ -1,7 +1,7 @@
 """
     This is the token creator file for the reset password feature 
     of Eshopper ecommerce web application.
-    Coded and maintained by vernonthedev
+    Coded and maintained by Jotham Prince
 """
 # necessary imports
 from django.contrib.auth.tokens import PasswordResetTokenGenerator
