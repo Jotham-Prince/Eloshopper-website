@@ -1,7 +1,7 @@
 """
     This is the models file for ecom app(seperate app under ecomproject)
     Eshopper Ecommerce Web Application
-    Coded and maintained by vernonthedev
+    Coded and maintained by Jotham Prince
 """
 
 # neccessary imports
